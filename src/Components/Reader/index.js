@@ -19,8 +19,18 @@ export default class Reader extends Component {
             <div className="reader">
                 <Publication publications = {this.publications}/>
                 <Counter counter = {this.state.counter}/>
-                <Controls counter = {this.state.counter}/>
+                <Controls
+                    onNext = { () => {
+                        this.setState({counter: this.state.counter + 1});
+                        console.log(this.state.counter);
+                    }}
+                    onBack = { () => {
+                        this.setState({counter: this.state.counter - 1});
+                        console.log(this.state.counter);
+                    }}
+                />
             </div>
         )
     }
+
 }

@@ -4,18 +4,12 @@ import './controls.scss'
 
 export default class Controls extends Component {
     render () {
+        const {onBack, onNext} = this.props;
         return (
             <section className="controls">
-                <button className="button" onClick={ () => this.handleBack() }>Previous</button>
-                <button className="button" onClick={ () => this.handleNext() }>Next</button>
+                <button className="button" onClick={ onBack }>Previous</button>
+                <button className="button" onClick={ onNext }>Next</button>
             </section>
         )
-    }
-
-    handleBack = () => {
-        console.log(this.props);
-    };
-    handleNext = () => {
-        // this.props.counter++
     }
 }
