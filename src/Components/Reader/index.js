@@ -17,16 +17,22 @@ export default class Reader extends Component {
     render () {
         return (
             <div className="reader">
-                <Publication publications = {this.publications}/>
-                <Counter counter = {this.state.counter}/>
+                <Publication
+                    publications = {this.publications}
+                    counter = {this.state.counter - 1}
+                />
+                <Counter
+                    counter = {this.state.counter}
+                    maxCounter = {this.publications.length}
+                />
                 <Controls
                     onNext = { () => {
-                        this.setState({counter: this.state.counter + 1});
-                        console.log(this.state.counter);
+                        this.state.counter < this.publications.length &&
+                            this.setState({counter: this.state.counter + 1});
                     }}
                     onBack = { () => {
+                        this.state.counter > 1 &&
                         this.setState({counter: this.state.counter - 1});
-                        console.log(this.state.counter);
                     }}
                 />
             </div>

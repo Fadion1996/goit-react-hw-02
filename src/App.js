@@ -6,7 +6,7 @@ import {Reader} from './Components/';
 
 function App() {
     return (
-        <div className="App">
+        <div className="app">
             <Reader/>
         </div>
     );

@@ -5,19 +5,13 @@ import './publication.scss'
 export default class Publication extends Component {
 
     render () {
+        const { counter, publications } = this.props;
         return (
-            <section className="publication">
-                {/*{*/}
-                    {/*this.props.publications.map((item)=>(*/}
-                        {/*<section key={item.id} className="publication">*/}
-                            {/*<h2>{item.title}</h2>*/}
-                            {/*<p>*/}
-                                {/*{item.text}*/}
-                            {/*</p>*/}
-                        {/*</section>*/}
-                    {/*))*/}
-                {/*}*/}
-
+            <section key={publications[counter].id} className="publication">
+                <h2>{publications[counter].title}</h2>
+                <p>
+                    {publications[counter].text}
+                </p>
             </section>
         )
     }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Button} from '@material-ui/core';
 
 import './controls.scss'
 
@@ -7,8 +8,16 @@ export default class Controls extends Component {
         const {onBack, onNext} = this.props;
         return (
             <section className="controls">
-                <button className="button" onClick={ onBack }>Previous</button>
-                <button className="button" onClick={ onNext }>Next</button>
+                <Button
+                    color="primary"
+                    variant="contained"
+                    className="button"
+                    onClick={ onBack }>Previous</Button>
+                <Button
+                    color="primary"
+                    variant="contained"
+                    className="button"
+                    onClick={ onNext }>Next</Button>
             </section>
         )
     }
