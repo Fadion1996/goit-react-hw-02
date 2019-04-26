@@ -26,14 +26,14 @@ export default class Reader extends Component {
                     maxCounter = {this.publications.length}
                 />
                 <Controls
-                    onNext = { () => {
+                    onNext = { () =>
                         this.state.counter < this.publications.length &&
-                            this.setState({counter: this.state.counter + 1});
-                    }}
-                    onBack = { () => {
+                            this.setState({counter: this.state.counter + 1})
+                    }
+                    onBack = { () =>
                         this.state.counter > 1 &&
-                        this.setState({counter: this.state.counter - 1});
-                    }}
+                        this.setState({counter: this.state.counter - 1})
+                    }
                 />
             </div>
         )
