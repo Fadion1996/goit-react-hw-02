@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
 
-import './movie-grid.css'
+import './search-bar.css'
 
-export default class MovieGrid extends Component {
+export default class SearchBar extends Component {
     render () {
+        const { searchValue, onChangeSearch } = this.props;
+
         return (
             <div className="movie-search">
-                <input type="text" className="input"/>
+                <input
+                    value={searchValue}
+                    type="text"
+                    className="input"
+                    onChange={ onChangeSearch }
+                />
             </div>
         )
     }
