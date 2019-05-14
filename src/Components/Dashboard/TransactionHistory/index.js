@@ -3,8 +3,11 @@ import './transaction-history.css'
 import React from "react";
 
 export default class TransactionHistory extends Component {
-    render (){
+    render() {
+        const {history} = this.props;
+
         return (
+
             <table className="history">
                 <thead>
                 <tr>
@@ -14,16 +17,17 @@ export default class TransactionHistory extends Component {
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>Deposit</td>
-                    <td>200$</td>
-                    <td>4/17/2019, 12:45:17</td>
-                </tr>
-                <tr>
-                    <td>Withdrawal</td>
-                    <td>100$</td>
-                    <td>4/18/2019, 14:15:23</td>
-                </tr>
+                {
+                    history.map((item) => {
+                        return (
+                            <tr key={item.id}>
+                                <td>{item.type}</td>
+                                <td>{item.amount}</td>
+                                <td>{item.date}</td>
+                            </tr>
+                        )
+                    })
+                }
                 </tbody>
             </table>
         )

@@ -9,7 +9,8 @@ export default class Control extends Component {
     };
 
     handleChange = (e) => {
-        this.setState({value: e.target.value});
+        const value = e.target.validity.valid ? e.target.value : this.state.value;
+        this.setState({value});
     };
 
     handleClick = (flag) => {
@@ -23,6 +24,7 @@ export default class Control extends Component {
                 <input
                     value={this.state.value}
                     type="text"
+                    pattern="[0-9]*"
                     onChange={this.handleChange}
                 />
                 <Button

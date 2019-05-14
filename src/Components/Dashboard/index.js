@@ -16,26 +16,35 @@ export default class MoviePage extends Component {
     };
 
     setHistory = (flag, value) => {
-        let type = '',
-            date = new Date(Date.now()).toLocaleString();
+        if (value) {
+            let type = '',
+                date = new Date(Date.now()).toLocaleString();
             date = date.substring(0, date.length - 3);
 
-        flag ? type = 'Deposit'
-            : type = 'Withdrawal';
-        value = value + '.00$';
+            if (flag) {
+                type = 'Deposit'
+                this.setState({balance: this.state.balance + parseInt(value)})
+            } else {
+                type = 'Withdrawal';
+                if (this.state.balance - parseInt(value) < 0) {
+                    alert('На счету недостаточно средств для проведения операции!');
+                } else {
+                    this.setState({balance: this.state.balance - parseInt(value)});
+                }
+            }
+            value = value + '.00$';
 
-        let newAction = {
-            id: shortid.generate(),
-            type: type,
-            amount: value,
-            date: date
-        };
+            let newAction = {
+                id: shortid.generate(),
+                type: type,
+                amount: value,
+                date: date
+            };
 
-        console.log(newAction);
-
-        this.setState({
-            history: [...this.state.history, newAction]
-        })
+            this.setState({
+                history: [...this.state.history, newAction],
+            })
+        }
     };
 
     render () {
