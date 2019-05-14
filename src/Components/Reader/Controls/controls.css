@@ -3,8 +3,9 @@
     align-items: center;
     justify-content: center;
 
-    button {
-        margin: 1rem;
-        min-width: 10rem;
-    }
+}
+
+.controls button {
+    margin: 1rem;
+    min-width: 10rem;
 }

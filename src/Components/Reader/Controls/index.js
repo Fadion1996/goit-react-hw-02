@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Button} from '@material-ui/core';
 
-import './controls.scss'
+import './controls.css'
 
 export default class Controls extends Component {
     render () {
