@@ -22,7 +22,7 @@ export default class TransactionHistory extends Component {
                         return (
                             <tr key={item.id}>
                                 <td>{item.type}</td>
-                                <td>{item.amount}</td>
+                                <td>{item.amount}.00$</td>
                                 <td>{item.date}</td>
                             </tr>
                         )
