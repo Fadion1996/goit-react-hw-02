@@ -8,11 +8,8 @@ import shortid from 'shortid'
 export default class MoviePage extends Component {
 
     state = {
-        history: [
-            // {id: 123123123, type: 'Deposit', amount: 200, date: '4/15/2019, 17:40:55'},
-            // {id: 123543123, type: 'Withdrawal', amount: 150, date: '4/18/2019, 11:20:37'}
-        ],
-        balance: 5000,
+        history: [],
+        balance: 0,
         deposit: 0,
         withdraw: 0
     };

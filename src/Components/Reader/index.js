@@ -26,6 +26,8 @@ export default class Reader extends Component {
                     maxCounter = {this.publications.length}
                 />
                 <Controls
+                    counter = {this.state.counter}
+                    maxCounter = {this.publications.length}
                     onNext = { () =>
                         this.state.counter < this.publications.length &&
                             this.setState({counter: this.state.counter + 1})

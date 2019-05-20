@@ -15,8 +15,7 @@ export default class MovieGrid extends Component {
                 <div className='movie-grid'>
                     {this.movies.map((movie) => {
                         if (searchValue) {
-                            checkSearch = ((movie.title.toLowerCase().search(searchValue.toLowerCase()) !== -1) ||
-                                (movie.overview.toLowerCase().search(searchValue.toLowerCase()) !== -1));
+                            checkSearch = (movie.title.toLowerCase().search(searchValue.toLowerCase()) !== -1);
                             if (checkSearch) {
                                 flagSearch = true;
                                 return (
